@@ -3955,32 +3955,31 @@ input, select, textarea {
 /* ========================================== */
 .custom-modal {
     position: fixed !important; 
-    z-index: 10000 !important; 
+    z-index: 99999 !important; /* Valor absurdamente alto para ficar por cima de tudo */
     left: 0 !important;
     top: 0 !important;
     width: 100% !important; 
     height: 100% !important; 
-    background-color: rgba(36, 41, 67, 0.95) !important; /* Fundo escuro do Forty */
+    background-color: rgba(26, 29, 46, 0.95) !important; /* Azul escuro bem denso */
     backdrop-filter: blur(8px) !important; 
-    display: none; /* Deixe como none, o JS vai alterar para flex */
+    display: none; 
     align-items: center !important;
     justify-content: center !important;
 }
 
-/* Força a caixinha interna a ter tamanho, cor e aparecer no centro */
 .modal-content {
-    background-color: #2a2f4a !important; 
+    background: #2a2f4a !important; /* Cor sólida dos cards */
     color: #ffffff !important;
     padding: 40px !important;
-    border-radius: 4px !important;
+    border-radius: 6px !important;
     width: 90% !important;
-    max-width: 500px !important;
+    max-width: 480px !important;
     position: relative !important;
-    box-shadow: 0 15px 45px rgba(0,0,0,0.7) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8) !important;
     text-align: center !important;
-    display: block !important; /* Garante que o bloco interno seja renderizado */
-    visibility: visible !important;
     opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
 }
 
 .close-btn {
