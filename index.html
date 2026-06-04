@@ -68,15 +68,15 @@
 
 						<!-- One -->
 							<section id="one" class="tiles">
-								<article>
+<article id="open-curry" style="cursor: pointer;">
 									<span class="image">
 										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<header class="major">
-									<h3><a href="#curry-modal" id="open-curry" class="link">Análise de Negócio — Curry Company</a></h3>
-									<p>Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
-								</header>
-							</article>
+										<h3><a href="#" class="link">Análise de Negócio — Curry Company</a></h3>
+										<p>Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
+									</header>
+								</article>
 							<article>
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
@@ -237,35 +237,36 @@
         </div>
     </div>
 </div>
-
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		var modal = document.getElementById("curry-modal");
-		var btn = document.getElementById("open-curry");
-		var closeBtn = document.querySelector(".close-btn");
+			document.addEventListener("DOMContentLoaded", function() {
+				var modal = document.getElementById("curry-modal");
+				var card = document.getElementById("open-curry");
+				var closeBtn = document.querySelector(".close-btn");
 
-		// Abre o modal ao clicar no card
-		if(btn) {
-			btn.addEventListener("click", function(e) {
-				e.preventDefault(); // Impede o redirecionamento para landing.html
-				modal.style.display = "flex";
+				// Monitora o clique no bloco inteiro do projeto
+				if(card) {
+					card.addEventListener("click", function(e) {
+						e.preventDefault();
+						e.stopPropagation(); // Bloqueia o script nativo do tema Forty
+						modal.style.display = "flex";
+					});
+				}
+
+				// Fecha o modal ao clicar no (X)
+				if(closeBtn) {
+					closeBtn.addEventListener("click", function(e) {
+						e.stopPropagation();
+						modal.style.display = "none";
+					});
+				}
+
+				// Fecha o modal se clicar na parte escura (fora da caixinha)
+				window.addEventListener("click", function(e) {
+					if (e.target == modal) {
+						modal.style.display = "none";
+					}
+				});
 			});
-		}
-
-		// Fecha o modal ao clicar no (X)
-		if(closeBtn) {
-			closeBtn.addEventListener("click", function() {
-				modal.style.display = "none";
-			});
-		}
-
-		// Fecha o modal se clicar fora da caixa central
-		window.addEventListener("click", function(e) {
-			if (e.target == modal) {
-				modal.style.display = "none";
-			}
-		});
-	});
-</script>
+		</script>
 	</body>
 </html>
