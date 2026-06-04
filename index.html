@@ -73,11 +73,11 @@
 										<img src="images/pic01.jpg" alt="" />
 									</span>
 									<header class="major">
-										<h3><a href="landing.html" class="link">Análise de Negócio — Curry Company</a></h3>
-										<p>Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
-									</header>
-								</article>
-								<article>
+									<h3><a href="#curry-modal" id="open-curry" class="link">Análise de Negócio — Curry Company</a></h3>
+									<p>Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
+								</header>
+							</article>
+							<article>
 									<span class="image">
 										<img src="images/pic02.jpg" alt="" />
 									</span>
@@ -218,6 +218,54 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		<div id="curry-modal" class="custom-modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        
+        <h2>Análise de Negócio — Curry Company</h2>
+        <p class="modal-subtitle">Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
+        
+        <hr class="modal-divider">
+        
+        <div class="modal-actions">
+            <a href="https://SEU_LINK_DO_STREAMLIT.streamlit.app" target="_blank" class="modal-btn btn-streamlit">
+                🚀 Ver Dashboard Interativo <span class="btn-sub">Streamlit</span>
+            </a>
+            <a href="https://github.com/guig23/O_NOME_DO_SEU_REPOSITORIO" target="_blank" class="modal-btn btn-github">
+                💻 Ver Código-Fonte <span class="btn-sub">GitHub</span>
+            </a>
+        </div>
+    </div>
+</div>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var modal = document.getElementById("curry-modal");
+		var btn = document.getElementById("open-curry");
+		var closeBtn = document.querySelector(".close-btn");
+
+		// Abre o modal ao clicar no card
+		if(btn) {
+			btn.addEventListener("click", function(e) {
+				e.preventDefault(); // Impede o redirecionamento para landing.html
+				modal.style.display = "flex";
+			});
+		}
+
+		// Fecha o modal ao clicar no (X)
+		if(closeBtn) {
+			closeBtn.addEventListener("click", function() {
+				modal.style.display = "none";
+			});
+		}
+
+		// Fecha o modal se clicar fora da caixa central
+		window.addEventListener("click", function(e) {
+			if (e.target == modal) {
+				modal.style.display = "none";
+			}
+		});
+	});
+</script>
 	</body>
 </html>
