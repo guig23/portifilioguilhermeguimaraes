@@ -218,55 +218,60 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-		<div id="curry-modal" class="custom-modal" style="display: none;">
-    <div class="modal-content">
-        <span class="close-btn">&times;</span>
-        
-        <h2>Análise de Negócio — Curry Company</h2>
-        <p class="modal-subtitle">Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
-        
-        <hr class="modal-divider">
-        
-        <div class="modal-actions">
-            <a href="https://SEU_LINK_DO_STREAMLIT.streamlit.app" target="_blank" class="modal-btn btn-streamlit">
-                🚀 Ver Dashboard Interativo <span class="btn-sub">Streamlit</span>
-            </a>
-            <a href="https://github.com/guig23/O_NOME_DO_SEU_REPOSITORIO" target="_blank" class="modal-btn btn-github">
-                💻 Ver Código-Fonte <span class="btn-sub">GitHub</span>
-            </a>
-        </div>
-    </div>
-</div>
-<script>
+<div id="curry-modal" class="custom-modal">
+			<div class="modal-content">
+				<span class="close-btn">&times;</span>
+				
+				<h2>Análise de Negócio — Curry Company</h2>
+				<p class="modal-subtitle">Otimização de entregas e insights estratégicos utilizando Python e Pandas.</p>
+				
+				<hr class="modal-divider">
+				
+				<div class="modal-actions">
+					<a href="https://SEU_LINK_DO_STREAMLIT.streamlit.app" target="_blank" class="modal-btn btn-streamlit">
+						🚀 Ver Dashboard Interativo <span class="btn-sub">Streamlit</span>
+					</a>
+					<a href="https://github.com/guig23/O_NOME_DO_SEU_REPOSITORIO" target="_blank" class="modal-btn btn-github">
+						💻 Ver Código-Fonte <span class="btn-sub">GitHub</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<script>
 			document.addEventListener("DOMContentLoaded", function() {
 				var modal = document.getElementById("curry-modal");
 				var card = document.getElementById("open-curry");
 				var closeBtn = document.querySelector(".close-btn");
 
-				// Intercepta o clique no bloco inteiro do projeto
 				if(card) {
 					card.addEventListener("click", function(e) {
 						e.preventDefault();
-						e.stopPropagation(); // Dá um "stop" no script travante do tema Forty
-						if(modal) modal.style.display = "flex";
+						e.stopPropagation(); // Trava o script do tema Forty
+						if(modal) {
+							modal.style.setProperty('display', 'flex', 'important');
+						}
 					});
 				}
 
-				// Fecha o modal ao clicar no (X)
 				if(closeBtn) {
 					closeBtn.addEventListener("click", function(e) {
 						e.stopPropagation();
-						if(modal) modal.style.display = "none";
+						if(modal) {
+							modal.style.setProperty('display', 'none', 'important');
+						}
 					});
 				}
 
-				// Fecha o modal se clicar em qualquer lugar fora da caixinha interna
 				window.addEventListener("click", function(e) {
 					if (e.target == modal) {
-						modal.style.display = "none";
+						if(modal) {
+							modal.style.setProperty('display', 'none', 'important');
+						}
 					}
 				});
 			});
 		</script>
+
 	</body>
 </html>
