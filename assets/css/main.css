@@ -3955,20 +3955,29 @@ input, select, textarea {
 /* ========================================== */
 .custom-modal {
     position: fixed !important; 
-    z-index: 99999 !important; /* Valor absurdamente alto para ficar por cima de tudo */
+    z-index: 99999 !important; 
     left: 0 !important;
     top: 0 !important;
     width: 100% !important; 
     height: 100% !important; 
-    background-color: rgba(26, 29, 46, 0.95) !important; /* Azul escuro bem denso */
+    background-color: rgba(24, 26, 41, 0.96) !important; 
     backdrop-filter: blur(8px) !important; 
-    display: none; 
+    display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: opacity 0.3s ease, visibility 0.3s ease !important;
+}
+
+/* Quando o JS colocar a classe active, ele se torna visível */
+.custom-modal.active {
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 .modal-content {
-    background: #2a2f4a !important; /* Cor sólida dos cards */
+    background: #2a2f4a !important; 
     color: #ffffff !important;
     padding: 40px !important;
     border-radius: 6px !important;
@@ -3977,9 +3986,6 @@ input, select, textarea {
     position: relative !important;
     box-shadow: 0 20px 50px rgba(0,0,0,0.8) !important;
     text-align: center !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
 }
 
 .close-btn {
@@ -3991,7 +3997,6 @@ input, select, textarea {
     color: #9fa4bc !important;
     transition: color 0.2s ease !important;
     line-height: 1 !important;
-    display: inline-block !important;
 }
 .close-btn:hover {
     color: #ffffff !important;
@@ -4002,7 +4007,6 @@ input, select, textarea {
     margin-bottom: 5px !important;
     letter-spacing: 1px !important;
     color: #ffffff !important;
-    display: block !important;
 }
 
 .modal-subtitle {
@@ -4011,7 +4015,6 @@ input, select, textarea {
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
     margin-bottom: 20px !important;
-    display: block !important;
 }
 
 .modal-divider {
@@ -4019,7 +4022,6 @@ input, select, textarea {
     height: 1px !important;
     background: rgba(255, 255, 255, 0.1) !important;
     margin: 20px 0 !important;
-    display: block !important;
 }
 
 .modal-actions {
@@ -4028,7 +4030,6 @@ input, select, textarea {
     gap: 15px !important;
 }
 
-/* Botões do Modal */
 .modal-btn {
     display: flex !important;
     flex-direction: column !important;
